@@ -1,0 +1,75 @@
+@import "bourbon";
+
+$heart: "\f004";
+$openheart: "\f08a";
+@mixin checkmark($size) {
+  font-family: FontAwesome;
+  font-size: $size;
+  content: $openheart;
+}
+
+@mixin box-style($size) {
+  width: 1.05*$size;
+  height: $size;
+  content: "";
+  position: absolute;
+  margin-left: -1.6*$size;
+  margin-top: 0.1*$size;
+}
+
+//http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+  
+.red-heart-checkbox {
+  $primary: #F00;
+  $secondary: #888;
+  $size: 30px;
+
+  visibility: hidden;
+  
+  & + label {
+    @include no-select;
+    font-size: $size;
+    padding-left: 0.5*$size;
+    transition: all 0.2s;
+  }
+  &:checked + label:before {    
+    content: $heart;
+    color: $primary;
+  }
+  & + label:before {
+    @include box-style($size);
+    @include checkmark($size);
+    transition: all 0.3s;
+    color: $secondary;
+  }
+  & + label:hover:before {
+    transform: scale(1.2);
+  }
+}
+
+//// Layout 
+html, body { 
+  height: 100%; 
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.control-group { margin: 3px; }
+.attribution {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

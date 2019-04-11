@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+.center-div
+{
+     position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 100px;
+     height: 100px;
+}
+.me{
+	background-image: url("/in28Minutes-springmvc/src/main/webapp/resources/images/bg/bghome.jpg");
+}
