@@ -1,4 +1,4 @@
-package com.in28minutes.welcome;
+package com.rs.welcome;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

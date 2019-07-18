@@ -8,8 +8,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>com.in28minutes</groupId>
-	<artifactId>in28Minutes-springmvc</artifactId>
+	<groupId>com.rs</groupId>
+	<artifactId>Recommendation_System</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 

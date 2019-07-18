@@ -1,6 +1,4 @@
-package com.in28minutes.model;
-
-import java.util.Arrays;
+package com.rs.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,9 +11,18 @@ public class Courses {
 	private String author;
 	private String content;
 	private String imageUrl;
+	private int number;
 	
 	
 	
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -79,12 +86,13 @@ public class Courses {
 		this.imageUrl = imageUrl;
 	}
 
-	public Courses(String courseName, String author, String content,String imageUrl) {
+	public Courses(String courseName, String author, String content,String imageUrl,int number) {
 		super();
 		this.courseName = courseName;
 		this.author = author;
 		this.content = content;
 		this.imageUrl = imageUrl;
+		this.number = number;
 	}
 	
 	public Courses() {

@@ -1,14 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
-<link rel="stylesheet" href="/resources/css/progress.css">
-<script type="text/javascript" src="/resources/js/pace.js"></script>
-<title>Generate Recommendation!</title>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/heart.scss"/>">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/modal.css"/>">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<title>SkillIdea</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,17 +42,7 @@
   </c:if>
   </div>
 </nav>
-<div class="container">
-<div class="jumbotron">
-  <h1 class="display-4">Hello,<c:out value="${userData.firstName}"></c:out></h1>
-  <p class="lead">Get the best recommendation.</p>
-  <hr class="my-4">
-  <p>It Uses the collaborative filtering to generate a set of recommendation to the user based on his tastes and likings   .</p>
-  <p class="lead" style="margin-left: 35%">
-    <a class="btn btn-primary btn-lg" href="/getReco" role="button">Get Recommendation</a>
-  </p>
-</div>
-</div>
+
 
 </body>
 </html>

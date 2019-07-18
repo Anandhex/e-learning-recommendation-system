@@ -14,7 +14,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>SkillIdea</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,66 +42,72 @@
   </c:if>
   </div>
 </nav>
-<c:if test="${errror ne null }"><p>Book already added</p></c:if>
-<c:if test="${error eq null }"><p>Book added successfully</p></c:if>
-<div class="container">
-<div class="form-row">	
-<c:set var="count" value="1" scope="page"></c:set>	
-<c:forEach items="${courses}" var="course">
-	<form:form action="/add" method="GET">
- 	<div class="col-3">
- 		<div class="card" style="width: 18rem;">
-  		<img src="${course.imageUrl}" class="card-img-top" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" alt="...">
-  			<div class="card-body">
-    		<h5 class="card-title">${course.courseName}</h5>
-    		<p class="card-text" style="text-overflow: ellipsis; width: 200px; overflow: hidden;white-space: nowrap">${course.content}</p>
-    		<input type="hidden" name="courseName" value="${course.courseName }">
-    		<input type="hidden" name="email" value="${userData.email}">
-    		<button class="btn btn-info btn-sm">Add course</button>
-			<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal${count}">More Info</button>
-
-<!-- Modal -->
-<div id="myModal${count}" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">${course.courseName}</h4>
-      </div>
-      <div class="modal-body">
-      	<p>${course.author}</p>
-        <p>${course.content}</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-     
-    		    			
-    </div>
-  
-  			</div>
-  			<c:set var="count" value="${count+1}" scope="page"></c:set>
-  			
-		</div>
-		</form:form>
-	<c:if test="${count}%4==0">
-		</div>
-		<div class="form-row">
+	<c:if test ="${courseEmpty eq null }">
+		<div class="container">
+			<div class="form-row">	
+			<c:set var="count" value="1" scope="page"></c:set>	
+							<c:forEach items="${courses}" var="course">
+								<form:form action="/add" method="GET">
+							 	<div class="col-3">
+							 		<div class="card" style="width: 18rem;">
+							  		<img src="${course.imageUrl}" class="card-img-top" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" alt="...">
+											  			<div class="card-body">
+											    		<h5 class="card-title">${course.courseName}</h5>
+											    		<p class="card-text" style="text-overflow: ellipsis; width: 200px; overflow: hidden;white-space: nowrap">${course.content}</p>
+											    		<input type="hidden" name="courseName" value="${course.courseName }">
+											    		<input type="hidden" name="email" value="${userData.email}">
+											    						<button class="btn btn-info btn-sm" id="addCourse" onclick="changeText">Add course</button>
+																		<button class="btn btn-info btn-sm" id="none" onclick="changeText">Opted:<c:out value="${course.number }"></c:out></button>					    						
+																		<!-- Trigger the modal with a button -->
+																		<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal${count}">More Info</button>
+															
+																				<!-- Modal -->
+																				<div id="myModal${count}" class="modal fade" role="dialog">
+																				  <div class="modal-dialog">
+																				
+																				    <!-- Modal content-->
+																				    <div class="modal-content">
+																				      <div class="modal-header">
+																				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+																				        <h4 class="modal-title">Course Name:${course.courseName}</h4>
+																				      </div>
+																				      <div class="modal-body">
+																				      	<p>Course Author:${course.author}</p>
+																				        <p>Course Content:${course.content}</p>
+																				      </div>
+																				      <div class="modal-footer">
+																				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																				      </div>
+																				    </div>
+																				  </div>
+																				</div>
+											              </div>  
+									</div>
+							<c:set var="count" value="${count+1}" scope="page"></c:set>
+								</div>
+								</form:form>
+							<c:if test="${count}%4==0">
+							</div>
+							<div class="form-row">
+							</c:if>	
+							</c:forEach>
+				</div>
+					  <form action="/save" method="get">
+					  	<button style="margin-left: 50%;margin-top: 10%" class="btn btn-primary ">save</button>
+					  </form>
+			</div>
 	</c:if>
-	
-</c:forEach>
-	</div>
-	  <form action="/save" method="get">
-	  	<button style="align-self: center;" class="btn btn-primary ">save</button>
-	  </form>
-    </div>
-
+    <c:if test="${courseEmpty ne null }">
+    	<p style="margin-top: 50%'">
+    	No course Available....
+    	You have selected all the courses
+    	</p>
+    </c:if>
+<script type="text/javascript">
+	function changeText() {
+		var k = document.getElementById("addCourse");
+		k.innerText="Course Added";
+	}
+</script>
 </body>
 </html>

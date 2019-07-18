@@ -1,14 +1,13 @@
-package com.in28minutes.services;
+package com.rs.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
-import com.in28minutes.model.Courses;
-import com.in28minutes.model.UserData;
+import com.rs.model.Courses;
+import com.rs.model.UserData;
 
 @Repository
 public class CourseDaoImpl	implements CourseDao {
@@ -28,6 +27,11 @@ public class CourseDaoImpl	implements CourseDao {
 		// TODO Auto-generated method stub
 		mongotemplate.save(courses);
 		
+	}
+	@Override
+	public void update(Courses courses) {
+		// TODO Auto-generated method stub
+		mongotemplate.save(courses);
 	}
 
 	@Override

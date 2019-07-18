@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Welcome!</title>
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/homepage.css"/>">
@@ -19,10 +19,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="Home.jsp">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/aboutUs">About Us <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <a class="nav-item active" href="/login"><button class="btn btn-outline-success">Login</button></a>
@@ -33,9 +33,9 @@
 	<div class="center-div">
 	<div class="card" style="width: 18rem; border-color: ; opacity: 0.8">
   <div class="card-body">
-    <h5 class="card-title">Skill Idea</h5>
-    <p class="card-text">The best E-Learning Recommedation site.Click now to explore the benefits.</p>
-    <a href="#" class="btn btn-primary" >Go somewhere</a>
+    <h5 class="card-title" style="margin-left: 35%">Skill Idea</h5>
+    <p class="card-text">The best E-Learning Recommendation site.</p>
+    
   </div>
 </div>
 

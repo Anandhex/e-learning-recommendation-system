@@ -1,21 +1,19 @@
-package com.in28minutes.login;
+package com.rs.login;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-
-import com.in28minutes.model.Courses;
-import com.in28minutes.model.UserData;
-import com.in28minutes.services.CourseDaoImpl;
-import com.in28minutes.services.UserDaoImpl;
+import com.rs.model.Courses;
+import com.rs.model.UserData;
+import com.rs.services.CourseDaoImpl;
+import com.rs.services.UserDaoImpl;
 
 
 @Controller
@@ -49,7 +47,20 @@ public class LoginController {
 		model.put("userData", userData);
 		List<Courses>courses=courseDaoImpl.listCoures();
 		model.put("courses",courses );
-		return "redirect:home";
+		List<Courses> fav = new ArrayList<Courses>();
+		List<String> favcourse = userData.getCourses();
+		Iterator<String> itr = favcourse.iterator();
+		while(itr.hasNext()) {
+			fav.add(courseDaoImpl.findOne(itr.next()));
+		}
+		courses.removeAll(fav);
+		
+		model.addAttribute("courses", courses);
+		if(courses.isEmpty()) {
+			model.addAttribute("courseEmpty", "No courses avaliable");
+		}
+		
+		return "redirect:/home";
 		}
 	}
 }

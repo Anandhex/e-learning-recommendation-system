@@ -1,8 +1,8 @@
-package com.in28minutes.services;
+package com.rs.services;
 
 import java.util.List;
 
-import com.in28minutes.model.UserData;
+import com.rs.model.UserData;
 
 public interface UserDao {
 	public List<UserData> findAll();

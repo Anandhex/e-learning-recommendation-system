@@ -1,10 +1,10 @@
-package com.in28minutes.login;
+package com.rs.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.model.UserData;
-import com.in28minutes.services.UserDaoImpl;
+import com.rs.model.UserData;
+import com.rs.services.UserDaoImpl;
 @Service
 public class LoginService {
 	@Autowired

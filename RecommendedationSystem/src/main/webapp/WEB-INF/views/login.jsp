@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Sign in</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/aboutUs"><img src="D:\HTML files\res\logo\Si_Logo_orange.jpg" width="40" class="d-inline-block align-top" height="30" alt="">SkillIDea</a>
+  <a class="navbar-brand" href="/aboutUs"><img src="/resources/images/logo/logo.jpg" width="40" class="d-inline-block align-top" height="30" alt="">SkillIDea</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -46,7 +46,7 @@
   
 <div class="form-group row">
     <div class="col-sm-10">
-      <button style="align-items: center;" type="submit" class="btn btn-primary">Log In</button>
+      <button style="margin-left: 50%" type="submit" class="btn btn-primary">Log In</button>
     </div>
   </div>
 </form>

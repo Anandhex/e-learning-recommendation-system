@@ -1,4 +1,4 @@
-package com.in28minutes.model;
+package com.rs.model;
 
 import java.util.List;
 

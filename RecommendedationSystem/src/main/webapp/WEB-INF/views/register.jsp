@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Sign Up!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/aboutUs"><img src="D:\HTML files\res\logo\Si_Logo_orange.jpg" width="40" class="d-inline-block align-top" height="30" alt="">SkillIDea</a>
+  <a class="navbar-brand" href="/aboutUs"><img src="/resources/images/logo/logo.jpg" width="40" class="d-inline-block align-top" height="30" alt="">SkillIDea</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -29,7 +29,7 @@
   </div>
 </nav>
 <div class="container" style="width: 40%; margin-top: 40px">
-<form:form action="/register" method="post" modelAttribute="farmerData" >
+<form:form action="/register" method="post" modelAttribute="userData" >
   <div class="form-group row">
     <form:label path="firstName" for="fullName" class="col-sm-2 col-form-label">Full Name</form:label>
     <div class="col-sm-10">
@@ -56,13 +56,10 @@
   </div>
 </form:form>
 </div>
-<p align="center"><c:if test="${requestScope.error ne null}">
+<p align="center"><c:if test="${errorMessage ne null}">
 		<strong style="color: red;"><c:out
-				value="${requestScope.error}"></c:out></strong>
+				value="${errorMessage}"></c:out></strong>
 	</c:if>
-	<c:if test="${requestScope.success ne null}">
-		<strong style="color: green;"><c:out
-				value="${requestScope.success}"></c:out></strong>
-	</c:if></p>
+	</p>
 </body>
 </html>
