@@ -32,7 +32,7 @@ import com.in28minutes.services.UserDaoImpl;
 import net.librec.recommender.ext.SlopeOneRecommender;
 
 @Controller
-@SessionAttributes("userData")
+	@SessionAttributes("userData")
 public class HomeController {
 
 	@Autowired

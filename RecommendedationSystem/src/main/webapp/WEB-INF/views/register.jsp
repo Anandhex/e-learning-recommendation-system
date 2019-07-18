@@ -29,7 +29,7 @@
   </div>
 </nav>
 <div class="container" style="width: 40%; margin-top: 40px">
-<form:form action="/register" method="post" modelAttribute="user" >
+<form:form action="/register" method="post" modelAttribute="farmerData" >
   <div class="form-group row">
     <form:label path="firstName" for="fullName" class="col-sm-2 col-form-label">Full Name</form:label>
     <div class="col-sm-10">
